@@ -5,6 +5,6 @@ export const Focus = styled.div`
   ${tw`flex flex-wrap -mx-3`};
 `;
 
-export const FocuItem = styled.div`
+export const FocusItem = styled.div`
   ${tw`w-full sm:w-1/2`};
 `;

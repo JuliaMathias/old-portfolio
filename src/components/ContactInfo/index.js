@@ -8,15 +8,15 @@ import TitleSection from 'components/ui/TitleSection';
 import * as Styled from './styles';
 
 const ConctactInfo = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "contact section" } }) {
+      mdx(frontmatter: { category: { eq: "contact section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "contact" } } }, sort: { fields: fileAbsolutePath }) {
+      allMdx(filter: { frontmatter: { category: { eq: "contact" } } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -31,8 +31,8 @@ const ConctactInfo = () => {
     }
   `);
 
-  const sectionTitle = markdownRemark.frontmatter;
-  const contacts = allMarkdownRemark.edges;
+  const sectionTitle = mdx.frontmatter;
+  const contacts = allMdx.edges;
 
   return (
     <Container section>

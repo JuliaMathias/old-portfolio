@@ -11,7 +11,7 @@ import FormatHtml from 'components/utils/FormatHtml';
 import * as Styled from './styles';
 
 const BlogPost = ({ data, pageContext }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const { previous, next } = pageContext;
 
   return (
@@ -19,7 +19,7 @@ const BlogPost = ({ data, pageContext }) => {
       <SEO title={post.frontmatter.title} />
       <Container section>
         <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
-        <FormatHtml content={post.html} />
+        <FormatHtml content={post.body} />
         <Styled.Links>
           <span>
             {previous && (
@@ -45,8 +45,8 @@ export default BlogPost;
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
         date(formatString: "MMM DD, YYYY")

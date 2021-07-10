@@ -5,9 +5,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Banner from 'components/ui/Banner';
 
 const HeroBanner = () => {
-  const { markdownRemark } = useStaticQuery(graphql`
+  const { mdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "hero section" } }) {
+      mdx(frontmatter: { category: { eq: "hero section" } }) {
         frontmatter {
           title
           subtitle
@@ -19,7 +19,7 @@ const HeroBanner = () => {
     }
   `);
 
-  const heroBanner = markdownRemark.frontmatter;
+  const heroBanner = mdx.frontmatter;
 
   return (
     <Banner
