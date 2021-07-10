@@ -9,13 +9,12 @@ import {
   faPalette,
   faMapMarkerAlt,
   faPhone,
-  faPaperPlane,
-  faSquare
+  faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /* add any additional icon to the library */
-library.add(fab, faLaptopCode, faDrawPolygon, faEdit, faEdit, faPalette, faMapMarkerAlt, faPhone, faPaperPlane, faSquare);
+library.add(fab, faLaptopCode, faDrawPolygon, faEdit, faEdit, faPalette, faMapMarkerAlt, faPhone, faPaperPlane);
 
 const Icon = ({ ...props }) => <FontAwesomeIcon {...props} />;
 
