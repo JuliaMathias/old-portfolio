@@ -1,6 +1,6 @@
 ---
 category: 'focus'
-title: 'Copywrite'
+title: 'Writing'
 icon: 'edit'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+description: "I've blogged on and off since I was 11 years old, studied screenwriting for a couple years and have dabbled in poetry as well."
 ---

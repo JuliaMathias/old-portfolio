@@ -1,6 +1,6 @@
 ---
 category: 'focus'
-title: 'Digital Marketing'
-icon: 'bullhorn'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+title: 'Art'
+icon: 'palette'
+description: "After being in love with art in all its multiple forms throughout my entire life, recently I've been trying to explore this side of myself more."
 ---

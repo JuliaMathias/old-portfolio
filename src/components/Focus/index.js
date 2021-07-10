@@ -45,9 +45,9 @@ const Focus = () => {
           } = item.node;
 
           return (
-            <Styled.FocuItem key={id}>
+            <Styled.FocusItem key={id}>
               <InfoBlock icon={icon} title={title} content={description} />
-            </Styled.FocuItem>
+            </Styled.FocusItem>
           );
         })}
       </Styled.Focus>

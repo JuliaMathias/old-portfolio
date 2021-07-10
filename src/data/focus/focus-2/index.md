@@ -1,6 +1,6 @@
 ---
 category: 'focus'
-title: 'Graphic Design'
+title: 'Design'
 icon: 'draw-polygon'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+description: "In a previous life, I was a Designer! So I'm still interested in the field and, of course, use a lot of what I've learned in Design School when I'm developing applications."
 ---

@@ -1,6 +1,6 @@
 ---
 category: 'focus'
-title: 'Web Design'
+title: 'Web Development'
 icon: 'laptop-code'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+description: "I have developed complete web applications, front and back-end. Currently I'm focusing more on the back-end with Elixir/Phoenix"
 ---
