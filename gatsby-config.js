@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
+        plugins: [`gatsby-remark-line-breaks`,
           {
             resolve: 'gatsby-remark-images',
             options: {

@@ -7,16 +7,16 @@ import TitleSection from 'components/ui/TitleSection';
 
 import * as Styled from './styles';
 
-const Services = () => {
+const Focus = () => {
   const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "services section" } }) {
+      markdownRemark(frontmatter: { category: { eq: "focus section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "services" } } }, sort: { fields: fileAbsolutePath }) {
+      allMarkdownRemark(filter: { frontmatter: { category: { eq: "focus" } } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -32,27 +32,27 @@ const Services = () => {
   `);
 
   const sectionTitle = markdownRemark.frontmatter;
-  const services = allMarkdownRemark.edges;
+  const focus = allMarkdownRemark.edges;
 
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-      <Styled.Services>
-        {services.map((item) => {
+      <Styled.Focus>
+        {focus.map((item) => {
           const {
             id,
             frontmatter: { title, icon, description }
           } = item.node;
 
           return (
-            <Styled.ServiceItem key={id}>
+            <Styled.FocusItem key={id}>
               <InfoBlock icon={icon} title={title} content={description} />
-            </Styled.ServiceItem>
+            </Styled.FocusItem>
           );
         })}
-      </Styled.Services>
+      </Styled.Focus>
     </Container>
   );
 };
 
-export default Services;
+export default Focus;
