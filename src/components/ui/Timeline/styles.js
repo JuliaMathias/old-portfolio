@@ -14,7 +14,7 @@ export const Details = styled.div`
 `;
 
 export const Content = styled.div`
-  ${tw`w-full sm:w-2/3 mt-4 sm:mt-0`};
+  ${tw`w-full sm:w-2/3 mt-4 sm:mt-0 list-disc`};
 `;
 
 export const Title = styled.div`
