@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const FormatHtml = ({ content }) => (
-  <span
-    className="format-html"
-    dangerouslySetInnerHTML={{
-      __html: content
-    }}
-  />
+  <MDXRenderer>{content}</MDXRenderer>
 );
 
 FormatHtml.propTypes = {

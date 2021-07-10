@@ -10,22 +10,22 @@ import TitleSection from 'components/ui/TitleSection';
 import * as Styled from './styles';
 
 const Posts = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "blog section" } }) {
+      mdx(frontmatter: { category: { eq: "blog section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(
+      allMdx(
         filter: { frontmatter: { category: { eq: "blog" }, published: { eq: true } } }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
           node {
             id
-            html
+            body
             fields {
               slug
             }
@@ -48,8 +48,8 @@ const Posts = () => {
     }
   `);
 
-  const sectionTitle = markdownRemark.frontmatter;
-  const posts = allMarkdownRemark.edges;
+  const sectionTitle = mdx.frontmatter;
+  const posts = allMdx.edges;
 
   return (
     <Container section>

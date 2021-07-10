@@ -8,9 +8,9 @@ import TitleSection from 'components/ui/TitleSection';
 import * as Styled from './styles';
 
 const Newsletter = () => {
-  const { markdownRemark } = useStaticQuery(graphql`
+  const { mdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "newsletter section" } }) {
+      mdx(frontmatter: { category: { eq: "newsletter section" } }) {
         frontmatter {
           title
           subtitle
@@ -22,7 +22,7 @@ const Newsletter = () => {
     }
   `);
 
-  const newsletter = markdownRemark.frontmatter;
+  const newsletter = mdx.frontmatter;
 
   return (
     <Styled.Newsletter>

@@ -8,15 +8,15 @@ import TitleSection from 'components/ui/TitleSection';
 import * as Styled from './styles';
 
 const Focus = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "focus section" } }) {
+      mdx(frontmatter: { category: { eq: "focus section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "focus" } } }, sort: { fields: fileAbsolutePath }) {
+      allMdx(filter: { frontmatter: { category: { eq: "focus" } } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -31,8 +31,8 @@ const Focus = () => {
     }
   `);
 
-  const sectionTitle = markdownRemark.frontmatter;
-  const focus = allMarkdownRemark.edges;
+  const sectionTitle = mdx.frontmatter;
+  const focus = allMdx.edges;
 
   return (
     <Container section>

@@ -12,19 +12,19 @@ import * as Styled from './styles';
 const Carousel = Loadable(() => import('components/ui/Carousel'));
 
 const Testimonials = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "testimonials section" } }) {
+      mdx(frontmatter: { category: { eq: "testimonials section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "testimonials" } } }) {
+      allMdx(filter: { frontmatter: { category: { eq: "testimonials" } } }) {
         edges {
           node {
             id
-            html
+            body
             frontmatter {
               title
               cover {
@@ -41,8 +41,8 @@ const Testimonials = () => {
     }
   `);
 
-  const sectionTitle = markdownRemark.frontmatter;
-  const testimonials = allMarkdownRemark.edges;
+  const sectionTitle = mdx.frontmatter;
+  const testimonials = allMdx.edges;
 
   return (
     <Container section>
@@ -52,7 +52,7 @@ const Testimonials = () => {
           {testimonials.map((item) => {
             const {
               id,
-              html,
+              body,
               frontmatter: { cover, title }
             } = item.node;
 
@@ -62,7 +62,7 @@ const Testimonials = () => {
                   <Img fluid={cover.childImageSharp.fluid} alt={title} />
                 </Styled.Image>
                 <Styled.Title>{title}</Styled.Title>
-                <FormatHtml content={html} />
+                <FormatHtml content={body} />
               </Styled.Testimonial>
             );
           })}

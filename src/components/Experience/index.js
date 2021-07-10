@@ -7,22 +7,22 @@ import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
 const Experience = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "experiences section" } }) {
+      mdx(frontmatter: { category: { eq: "experiences section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(
+      allMdx(
         filter: { frontmatter: { category: { eq: "experiences" } } }
         sort: { order: DESC, fields: fileAbsolutePath }
       ) {
         edges {
           node {
             id
-            html
+            body
             frontmatter {
               company
               position
@@ -35,8 +35,8 @@ const Experience = () => {
     }
   `);
 
-  const sectionTitle = markdownRemark.frontmatter;
-  const experiences = allMarkdownRemark.edges;
+  const sectionTitle = mdx.frontmatter;
+  const experiences = allMdx.edges;
 
   return (
     <Container section>
@@ -45,7 +45,7 @@ const Experience = () => {
       {experiences.map((item) => {
         const {
           id,
-          html,
+          body,
           frontmatter: { company, position, startDate, endDate }
         } = item.node;
 
@@ -54,7 +54,7 @@ const Experience = () => {
             key={id}
             title={company}
             subtitle={position}
-            content={<FormatHtml content={html} />}
+            content={<FormatHtml content={body} />}
             startDate={startDate}
             endDate={endDate}
           />

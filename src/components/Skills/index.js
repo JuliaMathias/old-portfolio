@@ -8,15 +8,15 @@ import ProgressBar from 'components/ui/ProgressBar';
 import * as Styled from './styles';
 
 const Skills = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "skills section" } }) {
+      mdx(frontmatter: { category: { eq: "skills section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "skills" } } }, sort: { fields: fileAbsolutePath }) {
+      allMdx(filter: { frontmatter: { category: { eq: "skills" } } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -30,8 +30,8 @@ const Skills = () => {
     }
   `);
 
-  const sectionTitle = markdownRemark.frontmatter;
-  const skills = allMarkdownRemark.edges;
+  const sectionTitle = mdx.frontmatter;
+  const skills = allMdx.edges;
 
   return (
     <Container section>

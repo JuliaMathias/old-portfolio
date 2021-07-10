@@ -7,22 +7,22 @@ import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
 const Education = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "education section" } }) {
+      mdx(frontmatter: { category: { eq: "education section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(
+      allMdx(
         filter: { frontmatter: { category: { eq: "education" } } }
         sort: { order: DESC, fields: fileAbsolutePath }
       ) {
         edges {
           node {
             id
-            html
+            body
             frontmatter {
               university
               degree
@@ -35,8 +35,8 @@ const Education = () => {
     }
   `);
 
-  const sectionTitle = markdownRemark.frontmatter;
-  const education = allMarkdownRemark.edges;
+  const sectionTitle = mdx.frontmatter;
+  const education = allMdx.edges;
 
   return (
     <Container section>
@@ -45,7 +45,7 @@ const Education = () => {
       {education.map((item) => {
         const {
           id,
-          html,
+          body,
           frontmatter: { university, degree, startDate, endDate }
         } = item.node;
 
@@ -54,7 +54,7 @@ const Education = () => {
             key={id}
             title={university}
             subtitle={degree}
-            content={<FormatHtml content={html} />}
+            content={<FormatHtml content={body} />}
             startDate={startDate}
             endDate={endDate}
           />
