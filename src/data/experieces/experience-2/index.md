@@ -1,11 +1,9 @@
 ---
 category: 'experiences'
-company: 'Aizoon Reply'
-position: 'UI/UX Designer'
-startDate: 'Jan 2011'
-endDate: 'May 2013'
+company: 'Cinema Nosso'
+position: 'Design Intern'
+startDate: 'Feb 2014'
+endDate: 'Oct 2015'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Even though it was technically an internship, I was the only designer at this NGO, and thus did everything. From social media to t­shirts, folders, posters, dvd cases, postcards, email marketing, keynotes and internal communication pieces. I often had to deal with extremely strict sponsor guidelines as well, so it taught me a lot of discipline in my design work.
