@@ -1,4 +1,5 @@
 import React from 'react';
+import { MDXProvider } from "@mdx-js/react"
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,10 +7,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Newsletter from 'components/Newsletter';
+import Icon from 'components/ui/Icon';
 
 import 'assets/styles/global.css';
 import GlobalStyles from 'assets/styles/globalStyles';
 import * as Styled from './styles';
+
+const shortcodes = { Icon }
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +29,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
+      <MDXProvider components={shortcodes}>
       <AnimatePresence exitBeforeEnter>
         <Styled.Layout>
           <Header siteTitle={data.site.siteMetadata.title} />
@@ -40,6 +45,7 @@ const Layout = ({ children }) => {
           </motion.div>
         </Styled.Layout>
       </AnimatePresence>
+    </MDXProvider>
     </>
   );
 };
