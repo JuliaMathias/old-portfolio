@@ -1,9 +1,9 @@
 ---
 category: 'experiences'
-company: 'Netlify'
-position: 'Senior Frontend Developer'
-startDate: 'Jun 2015'
-endDate: 'Jan 2018'
+company: 'Self-employed'
+position: 'Design Freelancer'
+startDate: 'Jan 2018'
+endDate: 'Feb 2020'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+I worked as a freelance designer doing jobs in Visual Identity, Brochures, and Book Covers for small businesses.
