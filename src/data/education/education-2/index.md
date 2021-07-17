@@ -1,9 +1,10 @@
 ---
 category: 'education'
-university: 'Stanford University'
-degree: 'Master of Science'
-startDate: 'Oct 2008'
-endDate: 'Jul 2010'
+university: 'Le Wagon'
+degree: 'Fullstack Web Development Bootcamp'
+startDate: 'Jul 2020'
+endDate: 'Dec 2020'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborist.
+<Icon icon={'long-arrow-alt-right'} /> I learned how to build web applications in Rails, incollaboration with other students in the same cohort using Agile and Kanban methodologies.<br /><br />
+<Icon icon={'long-arrow-alt-right'} /> My final project pitch was chosen so I had the opportunity of acting as my group's Tech lead.
