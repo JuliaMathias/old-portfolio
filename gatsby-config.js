@@ -5,8 +5,15 @@ module.exports = {
     author: `Saimir Kapaj & Julia Mathias`
   },
   plugins: [
-    `gatsby-plugin-typescript`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-tailwindcss`,
+    `gatsby-plugin-typescript`,
+    `gatsby-remark-images`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,20 +31,21 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
+        plugins: [ `gatsby-remark-images`,`gatsby-remark-line-breaks`],
         extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [`gatsby-remark-line-breaks`,
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 768,
-              linkImagesToOriginal: false
+              maxWidth: 100000,
+              linkImagesToOriginal: false,
+              withWebp: true,
+              showCaptions: false
             }
           }
         ]
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -50,10 +58,6 @@ module.exports = {
         icon: `src/assets/images/gatsby-icon.png`
       }
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-postcss`,
-    `gatsby-plugin-tailwindcss`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
