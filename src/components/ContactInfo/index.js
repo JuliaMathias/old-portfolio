@@ -10,13 +10,13 @@ import * as Styled from './styles';
 const ConctactInfo = () => {
   const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      mdx(frontmatter: { category: { eq: "contact section" } }) {
+      mdx(frontmatter: { category: { eq: "socials section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMdx(filter: { frontmatter: { category: { eq: "contact" } } }, sort: { fields: fileAbsolutePath }) {
+      allMdx(filter: { frontmatter: { category: { eq: "socials" } } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -32,12 +32,12 @@ const ConctactInfo = () => {
   `);
 
   const sectionTitle = mdx.frontmatter;
-  const contacts = allMdx.edges;
+  const socials = allMdx.edges;
 
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-      {contacts.map((item) => {
+      {socials.map((item) => {
         const {
           id,
           frontmatter: { title, icon, content }
