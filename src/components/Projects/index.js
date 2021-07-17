@@ -10,7 +10,7 @@ import TitleSection from 'components/ui/TitleSection';
 import * as Styled from './styles';
 
 const Projects = () => {
-  const { mdx, allMdx } = useStaticQuery(graphql`
+  const { allMdx } = useStaticQuery(graphql`
     query {
       mdx(frontmatter: { category: { eq: "blog" } }) {
         frontmatter {
@@ -48,7 +48,6 @@ const Projects = () => {
     }
   `);
 
-  const sectionTitle = mdx.frontmatter;
   const projects = allMdx.edges;
 
   return (
