@@ -12,14 +12,14 @@ import * as Styled from './styles';
 const Projects = () => {
   const { mdx, allMdx } = useStaticQuery(graphql`
     query {
-      mdx(frontmatter: { category: { eq: "project section" } }) {
+      mdx(frontmatter: { category: { eq: "blog" } }) {
         frontmatter {
           title
           subtitle
         }
       }
       allMdx(
-        filter: { frontmatter: { category: { eq: "projects" }, published: { eq: true } } }
+        filter: { frontmatter: { category: { eq: "blog" }, tags: {eq: "Projects"}, published: { eq: true } } }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
@@ -53,7 +53,7 @@ const Projects = () => {
 
   return (
     <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+      <TitleSection title="Projects" subtitle="What I've been working on" center />
       <Styled.Projects>
         {projects.map((item) => {
           const {
