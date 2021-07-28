@@ -1,6 +1,7 @@
 ---
-category: 'contact'
-title: 'Address'
-icon: 'map-marker-alt'
-content: '235 Middle Neck Rd, Sands Point, New York, USA'
+category: 'socials'
+title: 'Linkedin'
+icon: ['fab', 'linkedin-in']
+content: '@thejuliamathias'
+link: 'https://www.linkedin.com/in/thejuliamathias/'
 ---
