@@ -12,7 +12,7 @@ const InfoBlock = ({ icon, title, content, link, center }) => (
     </Styled.Icon>
     <Styled.Wrapper center={center}>
       <Styled.Title>{title}</Styled.Title>
-      <Styled.Content><a href={link} target="_blank">{content}</a></Styled.Content>
+      <Styled.Content><a href={link} target="_blank" rel="noreferrer">{content}</a></Styled.Content>
     </Styled.Wrapper>
   </Styled.InfoBlock>
 );
