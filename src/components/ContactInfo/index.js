@@ -23,6 +23,7 @@ const ConctactInfo = () => {
             frontmatter {
               title
               icon
+              link
               content
             }
           }
@@ -40,12 +41,12 @@ const ConctactInfo = () => {
       {socials.map((item) => {
         const {
           id,
-          frontmatter: { title, icon, content }
+          frontmatter: { title, icon, content, link }
         } = item.node;
 
         return (
           <Styled.ContactInfoItem key={id}>
-            <InfoBlock icon={icon} title={title} content={content} center />
+            <InfoBlock icon={icon} title={title} content={content} link={link} center />
           </Styled.ContactInfoItem>
         );
       })}
