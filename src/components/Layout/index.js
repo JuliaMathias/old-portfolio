@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Newsletter from 'components/Newsletter';
 import Icon from 'components/ui/Icon';
 
 import 'assets/styles/global.css';
@@ -40,7 +39,6 @@ const Layout = ({ children }) => {
             transition={{ delay: 0.2 }}
           >
             {children}
-            <Newsletter />
             <Footer />
           </motion.div>
         </Styled.Layout>
