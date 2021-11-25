@@ -5,7 +5,7 @@ import * as Styled from './styles';
 const mainNavItems = [
   {
     title: 'About Me',
-    slug: '/'
+    slug: '/about'
   },
   {
     title: 'Resume',
@@ -13,7 +13,7 @@ const mainNavItems = [
   },
   {
     title: 'Blog',
-    slug: '/blog/'
+    slug: '/'
   },
   {
     title: 'Socials',
